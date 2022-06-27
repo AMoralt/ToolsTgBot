@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Globalization;
+using System.Net;
 using System.Text;
 using System.Text.Json.Nodes;
 using Microsoft.IdentityModel.Tokens;
@@ -23,18 +24,17 @@ public class ZoomSheduleCommand : TelegramCommand
         Logger.Debug("Bot", "Start ZoomSheduleCommand");
         DateTime date;
         var errorMessage = "Некорректная дата. Формат создание запланированных конференций:\n/shedule dd.MM.yyyy hh:mm";
-        var text = update.Message.Text.Split(" ").Skip(1);
+        var text = update.Message.Text.Split(" ").Skip(1);//skip the command string
         
-        if (text.Count() == 0)
+        if (text.Count() == 0)//if after skip there's no date
         {
             await bot.SendTextMessageAsync(update.Message.Chat.Id, errorMessage);
             return;
         }
 
-        try
+        try //if date is incorrect
         {
-            date = Convert.ToDateTime(text.Aggregate((x, y) => x + "T" + y +"Z"))
-                                                        .Add(new TimeSpan(-5,0,0));
+            date = Convert.ToDateTime(text.Aggregate((x, y) => x + " " + y)); 
         }
         catch (Exception e)
         {
@@ -53,11 +53,11 @@ public class ZoomSheduleCommand : TelegramCommand
                 {
                     Name = "application/json",
                     Type = ParameterType.RequestBody,
-                    Value = JsonSerializer.Serialize(new 
+                    Value = JsonSerializer.Serialize(new
                     {
                         topic = "Zoom meeting",
                         duration = 60,
-                        start_time = date,
+                        start_time = date.Add(new TimeSpan(-5,0,0)),//time zones idk how to fix that
                         type = 2,
                         settings = new
                         {
@@ -84,8 +84,7 @@ public class ZoomSheduleCommand : TelegramCommand
                 Text = "👤Ссылка для входа",
                 Url = jsonNode["join_url"].ToString()
             });
-    
-        await bot.SendTextMessageAsync(update.Message.Chat.Id, "Конференция Zoom на " + Convert.ToDateTime(date), replyMarkup: inline );
+        await bot.SendTextMessageAsync(update.Message.Chat.Id, "Конференция Zoom на " + date, replyMarkup: inline );
         Logger.Debug("Bot", "End ZoomSheduleCommand");
     }
     public override bool Contains(Message message)

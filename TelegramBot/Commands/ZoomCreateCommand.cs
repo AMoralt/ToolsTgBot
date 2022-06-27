@@ -32,19 +32,19 @@ public class ZoomCreateCommand : TelegramCommand
                 {
                     Name = "application/json",
                     Type = ParameterType.RequestBody,
-                    Value = JsonSerializer.Serialize(new 
+                    Value = JsonSerializer.Serialize(new //Zoom properties
                     {
                         topic = "Zoom meeting",
                         duration = 60, //in minutes
                         start_time = DateTime.Now.AddSeconds(30),
-                        type = 2, //Enum: 1 -Instant meeting. 2 -Scheduled meeting.
-                        //8 -Repeat meeting with fixed time, 3 -"same" with no fixed time
+                        type = 2, //Enum: 1 - Instant meeting. 2 - Scheduled meeting.
+                        //8 - Repeat meeting with fixed time, 3 - "same" with no fixed time
                         settings = new
                         {
                             join_before_host = true,
                             waiting_room = false,
-                            jbh_time = 0 //Enum: 0 -Allow join before host at anytime
-                            //5 -allow 5 minutes before start. 10 - same, but 10
+                            jbh_time = 0 //Enum: 0 - Allow join before host at anytime
+                            //5 - Allow 5 minutes before start. 10 - Same, but 10
                         }
                     })
                 },
@@ -60,7 +60,7 @@ public class ZoomCreateCommand : TelegramCommand
         var response = client.Execute(request);
         var jsonNode = JsonNode.Parse(response.Content);
         
-        if (update.Type == UpdateType.InlineQuery) //If bot got an inline query
+        if (update.Type == UpdateType.InlineQuery)
         {
             var textMessage = new InputTextMessageContent($"{jsonNode["join_url"]}"); //Bot's text output
             var array = new InlineQueryResultArticle[]
