@@ -1,0 +1,47 @@
+{
+  "version": 2,
+  "dgSpecHash": "Odl8ZiZ3wdWlgRJvNspOHC6WEFmUL8QLA1xWDoK5nknwAOut1uV3Dm5P56VM3ln8aSsHODe8WhD/glfAsCkCtA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ildar\\RiderProjects\\TelegramBot\\TelegramBot\\TelegramBot.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0-preview.5.22301.12\\microsoft.extensions.configuration.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0-preview.5.22301.12\\microsoft.extensions.configuration.abstractions.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.0-preview.5.22301.12\\microsoft.extensions.configuration.binder.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\7.0.0-preview.5.22301.12\\microsoft.extensions.configuration.fileextensions.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.configuration.json\\7.0.0-preview.5.22301.12\\microsoft.extensions.configuration.json.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0-preview.5.22301.12\\microsoft.extensions.dependencyinjection.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0-preview.5.22301.12\\microsoft.extensions.dependencyinjection.abstractions.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\7.0.0-preview.5.22301.12\\microsoft.extensions.fileproviders.abstractions.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\7.0.0-preview.5.22301.12\\microsoft.extensions.fileproviders.physical.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\7.0.0-preview.5.22301.12\\microsoft.extensions.filesystemglobbing.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.logging\\7.0.0-preview.5.22301.12\\microsoft.extensions.logging.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\7.0.0-preview.5.22301.12\\microsoft.extensions.logging.abstractions.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.options\\7.0.0-preview.5.22301.12\\microsoft.extensions.options.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.extensions.primitives\\7.0.0-preview.5.22301.12\\microsoft.extensions.primitives.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.identitymodel.abstractions\\6.20.0\\microsoft.identitymodel.abstractions.6.20.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.20.0\\microsoft.identitymodel.jsonwebtokens.6.20.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.identitymodel.logging\\6.20.0\\microsoft.identitymodel.logging.6.20.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.20.0\\microsoft.identitymodel.tokens.6.20.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\newtonsoft.json\\12.0.2\\newtonsoft.json.12.0.2.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\restsharpsigned\\105.2.3\\restsharpsigned.105.2.3.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.20.0\\system.identitymodel.tokens.jwt.6.20.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\system.text.encodings.web\\7.0.0-preview.5.22301.12\\system.text.encodings.web.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\system.text.json\\7.0.0-preview.5.22301.12\\system.text.json.7.0.0-preview.5.22301.12.nupkg.sha512",
+    "C:\\Users\\ildar\\.nuget\\packages\\telegram.bot\\18.0.0\\telegram.bot.18.0.0.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'RestSharpSigned 105.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "RestSharpSigned",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
+}
