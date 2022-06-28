@@ -1,0 +1,14 @@
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\bin\Debug\net6.0\TelegramBot.Data.deps.json
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\bin\Debug\net6.0\TelegramBot.Data.runtimeconfig.json
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\bin\Debug\net6.0\TelegramBot.Data.dll
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\bin\Debug\net6.0\TelegramBot.Data.pdb
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.csproj.AssemblyReference.cache
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.AssemblyInfoInputs.cache
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.AssemblyInfo.cs
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.csproj.CoreCompileInputs.cache
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.dll
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\refint\TelegramBot.Data.dll
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.pdb
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\TelegramBot.Data.genruntimeconfig.cache
+C:\Users\ildar\RiderProjects\TelegramBot\TelegramBot.Data\obj\Debug\net6.0\ref\TelegramBot.Data.dll

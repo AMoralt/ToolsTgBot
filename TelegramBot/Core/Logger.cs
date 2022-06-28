@@ -1,4 +1,6 @@
-﻿namespace TelegramBot;
+﻿using Microsoft.Extensions.Logging;
+
+namespace TelegramBot;
 
 public static class Logger
 {

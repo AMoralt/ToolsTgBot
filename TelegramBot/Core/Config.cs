@@ -10,6 +10,7 @@ public static class Config
     public static string? APIkey { get; }
     public static string? APISecret { get; }
     public static string? JWTToken { get; }
+    public static string? DbConnection { get; }
     
     public static Dictionary<string, string>? CommandNames;
 
@@ -25,6 +26,7 @@ public static class Config
             APIkey = config["APIkey"];
             JWTToken = config["JWTToken"];
             APISecret = config["APISecret"];
+            DbConnection = config["ToDoDB"];
             CommandNames = config.GetSection("CommandNames").Get<Dictionary<string, string>>();
         }
         catch (Exception ex)
