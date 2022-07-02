@@ -13,7 +13,6 @@ namespace TelegramBot.Core;
 
 public class EntryPoint
 {
-    //private CommandService _commandService;
     public async Task EntryAsync()
     {
         Logger.Debug("Bot", "Initializing");
@@ -35,6 +34,10 @@ public class EntryPoint
             Logger.Debug("Bot", "StartReceiving");
             var client = services.GetRequiredService<TelegramBotClient>();
             var handler = services.GetRequiredService<HandlingService>();
+            // var db = services.GetRequiredService<GoalDataContext>();
+            // db.Goals.RemoveRange(db.Goals);
+            // db.Users.RemoveRange(db.Users);
+            // db.SaveChanges();
 
             client.StartReceiving(handler.UpdateHandler, handler.ErrorHandler, receiverOptions);
         }

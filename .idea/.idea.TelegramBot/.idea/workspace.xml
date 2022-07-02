@@ -6,36 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="9e96c888-887f-48c4-8afa-5bacb6b8fa8e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/Goal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/Goal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/GoalDataContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/GoalDataContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/Migrations/20220628142702_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/Migrations/20220628142702_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/Migrations/GoalDataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/Migrations/GoalDataContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/ref/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/ref/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/refint/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/refint/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Abstractions/TelegramCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Abstractions/TelegramCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/AddCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/AddCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/StartCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/StartCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ZoomCreateCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/ZoomCreateCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ZoomSheduleCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/ZoomSheduleCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ShowArchiveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/ShowArchiveCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ShowCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/ShowCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Core/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Core/EntryPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Services/HandlingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Services/HandlingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/ref/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/ref/TelegramBot.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/refint/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/refint/TelegramBot.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +145,7 @@
       <workItem from="1656587453063" duration="1846000" />
       <workItem from="1656609323621" duration="313000" />
       <workItem from="1656611130580" duration="1643000" />
-      <workItem from="1656765061230" duration="1442000" />
+      <workItem from="1656765061230" duration="9825000" />
     </task>
     <servers />
   </component>

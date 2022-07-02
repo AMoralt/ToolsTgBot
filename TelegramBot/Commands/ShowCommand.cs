@@ -25,14 +25,19 @@ public class ShowCommand : TelegramCommand
         var _database = _services.GetRequiredService<GoalDataContext>();
         var inDataBase = _database.Users
             .Single(x => x.ChatId == update.Message.Chat.Id.ToString());
+        
         var list = _database.Goals.Where(x => x.UserId == inDataBase.Id);
+        
         foreach (var goal in list)
         {
-            if (goal.ArchiveDate == null && DateTime.Now.Date <= goal.DueDate.Date)
+            if (goal.ArchiveDate == null)
+            {
+                if(DateTime.Now.Date > goal.DueDate.Date) 
+                    goal.ArchiveDate = goal.DueDate;
+                
                 await bot.SendTextMessageAsync(update.Message.Chat.Id,
                     "Название занятия:\n" + goal.GoalName + "\nДата занятия:\n" + goal.DueDate);
-            else if(goal.ArchiveDate == null)
-                goal.ArchiveDate = goal.DueDate;
+            }
         }
 
         //_database.SaveChanges();

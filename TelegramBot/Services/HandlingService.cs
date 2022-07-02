@@ -33,7 +33,7 @@ public class HandlingService
             .Where(x => x.ChatId == update.Message.Chat.Id.ToString());
         if (update.Type == UpdateType.Message)
         {
-            if (inDataBase.IsNullOrEmpty())
+            if (inDataBase.IsNullOrEmpty()) //if user is not register in our database
             {
                 _database.Users.Add(new User
                 {
@@ -49,8 +49,6 @@ public class HandlingService
             if (command.Contains(update))
             {
                 await command.Execute(update, bot);
-                inDataBase.First().LastMessage = update.Message.Text;
-                _database.SaveChanges();
                 break;
             }
         }

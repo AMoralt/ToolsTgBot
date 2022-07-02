@@ -25,18 +25,19 @@ public class ShowArchiveCommand : TelegramCommand
         var _database = _services.GetRequiredService<GoalDataContext>();
         var inDataBase = _database.Users
             .Single(x => x.ChatId == update.Message.Chat.Id.ToString());
+        
         var list = _database.Goals.Where(x => x.UserId == inDataBase.Id);
+        
         foreach (var goal in list)
         {
-            if (goal.ArchiveDate == null && DateTime.Now.Date > goal.DueDate.Date)
+            if (goal.ArchiveDate == null && DateTime.Now.Date > goal.DueDate.Date)//if goal is not archived, but outdated
                 goal.ArchiveDate = goal.DueDate;
-            
-            if(goal.ArchiveDate != null)
+            else if(goal.ArchiveDate != null) //if goal is archive
                 await bot.SendTextMessageAsync(update.Message.Chat.Id,
                     "Название занятия:\n" + goal.GoalName + "\nДата закрытия:\n" + goal.ArchiveDate);
         }
 
-        //_database.SaveChanges();
+        _database.SaveChanges();
         Logger.Debug("Bot", "End ShowCommand");
     }
 

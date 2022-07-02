@@ -25,31 +25,33 @@ public class AddCommand : TelegramCommand
         
         var user = _database.Users
             .Single(x => x.ChatId == update.Message.Chat.Id.ToString());
-        if (update.Message.Text.Contains(Name))
+        
+        if (update.Message.Text.Contains(Name)) // if got "/show" message
         {
             await bot.SendTextMessageAsync(update.Message.Chat.Id, "Введите название вашего занятия следующим образом:\n Название занятия - дата");
-            user.LastMessage = update.Message.Text;
-            return;
-        }
-        try
-        {
-            _database.Goals.Add(new Goal()
-            {
-                User = user,
-                UserId = user.Id,
-                GoalName = update.Message.Text.Split("-")[0],
-                DueDate = Convert.ToDateTime(update.Message.Text.Split("-")[1]).ToUniversalTime().AddHours(5),
-                ArchiveDate = null
-            });
-            await bot.SendTextMessageAsync(update.Message.Chat.Id, "🤖 Занятие создано.");
-            user.LastMessage = update.Message.Text;
+            user.LastMessage = Name; //remember that we wrote "/show"
             _database.SaveChanges();
         }
-        catch(Exception ex)
+        else 
         {
-            await bot.SendTextMessageAsync(update.Message.Chat.Id, "Неправильный формат, введите следующим образом:\n Название занятия - дата");
-            user.LastMessage = Name;
-            return;
+            try
+            {
+                _database.Goals.Add(new Goal()
+                {
+                    User = user,
+                    UserId = user.Id,
+                    GoalName = update.Message.Text.Split("-")[0],
+                    DueDate = Convert.ToDateTime(update.Message.Text.Split("-")[1]).ToUniversalTime().AddHours(5),
+                    ArchiveDate = null
+                });
+                await bot.SendTextMessageAsync(update.Message.Chat.Id, "🤖 Занятие создано.");
+                user.LastMessage = update.Message.Text;
+                _database.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                await bot.SendTextMessageAsync(update.Message.Chat.Id, "Неправильный формат, введите следующим образом:\nНазвание занятия - дата");
+            }
         }
         Logger.Debug("Bot", "End AddCommand");
     }
