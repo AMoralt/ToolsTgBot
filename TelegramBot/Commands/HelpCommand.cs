@@ -31,11 +31,11 @@ public class HelpCommand : TelegramCommand
             await bot.SendTextMessageAsync(update.Message.Chat.Id,$" {x}\n");
         }
     }
-    public override bool Contains(Message message)
+    public override bool Contains(Update update)
     {
-        if (message.Type != MessageType.Text)
+        if (update.Type != UpdateType.Message)
             return false;
 
-        return message.Text.Contains(Name);
+        return update.Message.Text.Contains(Name);
     }
 }

@@ -85,11 +85,13 @@ public class ZoomCreateCommand : TelegramCommand
             Logger.Debug("Bot", "End ZoomCreateCommand");
         }
     }
-    public override bool Contains(Message message)
+    public override bool Contains(Update update)
     {
-        if (message.Type != MessageType.Text)
+        if (update.Type == UpdateType.InlineQuery)
+            return true;
+        if (update.Message.Type != MessageType.Text)
             return false;
 
-        return message.Text.Contains(Name);
+        return update.Message.Text.Contains(Name);
     }
 }

@@ -35,10 +35,7 @@ public class EntryPoint
             Logger.Debug("Bot", "StartReceiving");
             var client = services.GetRequiredService<TelegramBotClient>();
             var handler = services.GetRequiredService<HandlingService>();
-            var db = services.GetRequiredService<GoalDataContext>();
-            db.Users.RemoveRange(db.Users);
-                
-                
+
             client.StartReceiving(handler.UpdateHandler, handler.ErrorHandler, receiverOptions);
         }
         catch (Exception ex)

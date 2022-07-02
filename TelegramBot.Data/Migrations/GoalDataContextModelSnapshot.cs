@@ -36,11 +36,6 @@ namespace TelegramBot.Data.Migrations
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("GoalDescription")
-                        .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("character varying(300)");
-
                     b.Property<string>("GoalName")
                         .IsRequired()
                         .HasMaxLength(60)

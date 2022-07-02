@@ -18,11 +18,11 @@ public class StartCommand : TelegramCommand
         await new HelpCommand().Execute(update, bot);
     }
 
-    public override bool Contains(Message message)
+    public override bool Contains(Update update)
     {
-        if (message.Type != MessageType.Text)
+        if (update.Type != UpdateType.Message)
             return false;
 
-        return message.Text.Contains(Name);
+        return update.Message.Text.Contains(Name);
     }
 }

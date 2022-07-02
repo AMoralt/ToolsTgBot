@@ -32,7 +32,6 @@ namespace TelegramBot.Data.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
                     GoalName = table.Column<string>(type: "character varying(60)", maxLength: 60, nullable: false),
-                    GoalDescription = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: false),
                     DueDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     ArchiveDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
