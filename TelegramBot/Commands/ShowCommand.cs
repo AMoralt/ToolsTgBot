@@ -30,14 +30,12 @@ public class ShowCommand : TelegramCommand
         
         foreach (var goal in list)
         {
-            if (goal.ArchiveDate == null)
-            {
-                if(DateTime.Now.Date > goal.DueDate.Date) 
-                    goal.ArchiveDate = goal.DueDate;
-                
+            if (goal.ArchiveDate == null && DateTime.Now > goal.DueDate)
+                goal.ArchiveDate = goal.DueDate;
+            
+            if(goal.ArchiveDate == null)
                 await bot.SendTextMessageAsync(update.Message.Chat.Id,
                     "Название занятия:\n" + goal.GoalName + "\nДата занятия:\n" + goal.DueDate);
-            }
         }
 
         //_database.SaveChanges();

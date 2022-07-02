@@ -30,9 +30,10 @@ public class ShowArchiveCommand : TelegramCommand
         
         foreach (var goal in list)
         {
-            if (goal.ArchiveDate == null && DateTime.Now.Date > goal.DueDate.Date)//if goal is not archived, but outdated
+            if (goal.ArchiveDate == null && DateTime.Now > goal.DueDate)//if goal is not archived, but outdated
                 goal.ArchiveDate = goal.DueDate;
-            else if(goal.ArchiveDate != null) //if goal is archive
+            
+            if(goal.ArchiveDate != null) //if goal is archive
                 await bot.SendTextMessageAsync(update.Message.Chat.Id,
                     "Название занятия:\n" + goal.GoalName + "\nДата закрытия:\n" + goal.ArchiveDate);
         }

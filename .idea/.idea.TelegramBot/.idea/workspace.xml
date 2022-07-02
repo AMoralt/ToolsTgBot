@@ -6,12 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9e96c888-887f-48c4-8afa-5bacb6b8fa8e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/AddCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/AddCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ShowArchiveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/ShowArchiveCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ShowCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/ShowCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Core/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Core/EntryPoint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Services/HandlingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Services/HandlingService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.dll" afterDir="false" />
@@ -30,6 +26,11 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49d35132689941e097552abda2013e694898/26/e38d3377/IServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/574cf8de59984b7891943ab2f605332a29800/09/8bcb25fd/RestRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/574cf8de59984b7891943ab2f605332a29800/17/15fa23a2/RestClient.cs" root0="SKIP_HIGHLIGHTING" />
@@ -145,7 +146,7 @@
       <workItem from="1656587453063" duration="1846000" />
       <workItem from="1656609323621" duration="313000" />
       <workItem from="1656611130580" duration="1643000" />
-      <workItem from="1656765061230" duration="9825000" />
+      <workItem from="1656765061230" duration="12254000" />
     </task>
     <servers />
   </component>
@@ -193,5 +194,13 @@
         <PinnedItemInfo parentTag="Type#RestSharp.RestRequest" memberName="RequestFormat" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="goal.DueDate.Date" language="C#" />
+        <watch expression="DateTime.Now.Date" language="C#" />
+        <watch expression="goal.DueDate" language="C#" />
+        <watch expression="DateTime.Now.Date &gt; goal.DueDate.Date" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
