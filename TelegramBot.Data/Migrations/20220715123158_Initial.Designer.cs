@@ -12,7 +12,7 @@ using TelegramBot.Data;
 namespace TelegramBot.Data.Migrations
 {
     [DbContext(typeof(GoalDataContext))]
-    [Migration("20220628195232_Initial")]
+    [Migration("20220715123158_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -66,7 +66,7 @@ namespace TelegramBot.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("LastMessage")
+                    b.Property<string>("LastCommand")
                         .HasMaxLength(300)
                         .HasColumnType("character varying(300)");
 

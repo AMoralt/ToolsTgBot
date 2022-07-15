@@ -17,7 +17,7 @@ public class HelpCommand : TelegramCommand
         
         foreach (var x in Config.CommandNames)
         {
-            if(x.Value != "-")
+            if(!x.Value.StartsWith("!"))
                 await bot.SendTextMessageAsync(update.Message.Chat.Id,$" {x}\n");
         }
         Logger.Debug("Bot", "End HelpCommand");

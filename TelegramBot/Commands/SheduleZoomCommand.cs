@@ -78,7 +78,7 @@ public class SheduleZoomCommand : TelegramCommand
         await bot.SendTextMessageAsync(update.Message.Chat.Id, "Вход разрешен за 10 минут до начала конференции.");
         
         Logger.Debug("Bot", "End SheduleZoomCommand");
-        return null; //TODO Swap null and Name, It turns out unintuitive
+        return string.Empty; //TODO Swap null and Name, It turns out unintuitive
     }
 
     private bool ValidateMessage(string messageText)

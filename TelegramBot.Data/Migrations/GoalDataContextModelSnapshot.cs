@@ -64,7 +64,7 @@ namespace TelegramBot.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("LastMessage")
+                    b.Property<string>("LastCommand")
                         .HasMaxLength(300)
                         .HasColumnType("character varying(300)");
 

@@ -17,7 +17,7 @@ namespace TelegramBot.Data.Migrations
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ChatId = table.Column<string>(type: "text", nullable: false),
-                    LastMessage = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: true)
+                    LastCommand = table.Column<string>(type: "character varying(300)", maxLength: 300, nullable: true)
                 },
                 constraints: table =>
                 {

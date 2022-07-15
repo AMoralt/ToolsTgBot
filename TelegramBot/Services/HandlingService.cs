@@ -61,10 +61,12 @@ public class HandlingService
         
         if (user == null) //if user is not register in our database
         {
-            _database.Users.Add(new User
+            user = new User()
             {
-                ChatId = update.Message.Chat.Id.ToString()
-            });
+                ChatId = update.Message.Chat.Id.ToString(),
+                LastCommand = null
+            };
+            _database.Users.Add(user);
             _database.SaveChanges();
         }
         return user;

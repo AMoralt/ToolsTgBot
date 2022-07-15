@@ -38,7 +38,7 @@ public class AddGoalCommand : TelegramCommand
         await bot.SendTextMessageAsync(update.Message.Chat.Id, "🤖 Занятие создано.");
         
         Logger.Debug("Bot", "End AddGoalCommand");
-        return null; //TODO Swap null and Name, It turns out unintuitive
+        return string.Empty; //TODO Swap null and Name, It turns out unintuitive
     }
     private bool ValidateMessage(string? messageText)
     {
