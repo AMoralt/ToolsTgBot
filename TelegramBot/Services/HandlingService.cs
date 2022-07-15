@@ -38,9 +38,9 @@ public class HandlingService
 
                 foreach (var command in _commands)
                 {
-                    if (command.Contains(update, user.LastMessage))
+                    if (command.Contains(update, user.LastCommand))
                     {
-                        user.LastMessage = await command.Execute(update, bot); //Execute returns string Name of command TODO change method's name 
+                        user.LastCommand = await command.Execute(update, bot); //Execute returns string Name of command TODO change method's name 
                         _database.SaveChanges();
                         break;
                     }
@@ -63,8 +63,7 @@ public class HandlingService
         {
             _database.Users.Add(new User
             {
-                ChatId = update.Message.Chat.Id.ToString(),
-                LastMessage = null
+                ChatId = update.Message.Chat.Id.ToString()
             });
             _database.SaveChanges();
         }

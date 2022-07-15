@@ -35,11 +35,11 @@ public class GoalDataContext : DbContext
         
             builder.HasIndex(u => u.ChatId).IsUnique();
         
-            builder.Property(u => u.LastMessage).HasDefaultValue(null);
+            builder.Property(u => u.LastCommand).HasDefaultValue(null);
         
             builder.Property(u => u.ChatId).IsRequired();
         
-            builder.Property(u => u.LastMessage).HasMaxLength(300);
+            builder.Property(u => u.LastCommand).HasMaxLength(300);
         }
     }
     public class GoalConfiguration : IEntityTypeConfiguration<Goal>
