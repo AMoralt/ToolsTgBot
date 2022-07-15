@@ -19,9 +19,11 @@ public class HandlingService
         {
             new StartCommand(),
             new HelpCommand(),
-            new ZoomCreateCommand(), 
-            new ZoomSheduleCommand(),
-            new AddCommand(services),
+            new CreateZoomCommand(),
+            new SheduleCommand(),
+            new SheduleZoomCommand(),
+            new AddCommand(),
+            new AddGoalCommand(services),
             new ShowCommand(services),
             new ShowArchiveCommand(services),
         };
@@ -29,33 +31,43 @@ public class HandlingService
     }
     public async Task UpdateHandler(ITelegramBotClient bot, Update update, CancellationToken arg3)
     {
-        var inDataBase = _database.Users
-            .Where(x => x.ChatId == update.Message.Chat.Id.ToString());
         if (update.Type == UpdateType.Message)
-        {
-            if (inDataBase.IsNullOrEmpty()) //if user is not register in our database
+            if (update.Message.Type == MessageType.Text)
             {
-                _database.Users.Add(new User
-                {
-                    ChatId = update.Message.Chat.Id.ToString(),
-                    LastMessage = null
-                });
-                _database.SaveChanges();
-            }
-        }
-        
-        foreach (var command in _commands)
-        {
-            if (command.Contains(update))
-            {
-                await command.Execute(update, bot);
-                break;
-            }
-        }
-    }
+                var user = GetUserFromDB(update);
 
+                foreach (var command in _commands)
+                {
+                    if (command.Contains(update, user.LastMessage))
+                    {
+                        user.LastMessage = await command.Execute(update, bot); //Execute returns string Name of command TODO change method's name 
+                        _database.SaveChanges();
+                        break;
+                    }
+                }
+            }
+    }
     public async Task ErrorHandler(ITelegramBotClient bot, Exception exception, CancellationToken arg3)
     {
-        throw new NotImplementedException();
+        Logger.Debug("HandlingService", exception.Message);
+        AppControl.Exit();
+    }
+
+    private User GetUserFromDB(Update update)
+    {
+        var user = (from u in _database.Users
+            where u.ChatId == update.Message.Chat.Id.ToString()
+            select u).SingleOrDefault();
+        
+        if (user == null) //if user is not register in our database
+        {
+            _database.Users.Add(new User
+            {
+                ChatId = update.Message.Chat.Id.ToString(),
+                LastMessage = null
+            });
+            _database.SaveChanges();
+        }
+        return user;
     }
 }

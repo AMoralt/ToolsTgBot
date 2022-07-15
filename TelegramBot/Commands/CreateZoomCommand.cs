@@ -13,13 +13,13 @@ using Telegram.Bot.Types.ReplyMarkups;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 namespace TelegramBot;
 
-public class ZoomCreateCommand : TelegramCommand
+public class CreateZoomCommand : TelegramCommand
 {
-    public override string Name => Config.CommandNames["ZoomCreateCommand"];
+    public override string Name => Config.CommandNames["CreateZoomCommand"];
 
-    public override async Task Execute(Update update, ITelegramBotClient bot)
+    public override async Task<string> Execute(Update update, ITelegramBotClient bot)
     {
-        Logger.Debug("Bot", "Handling ZoomCreateCommand");
+        Logger.Debug("Bot", "Handling CreateZoomCommand");
         var client = new RestClient("https://api.zoom.us/v2/users/dias_galym@bk.ru/meetings");
         
         var request = new RestRequest()
@@ -69,8 +69,6 @@ public class ZoomCreateCommand : TelegramCommand
             };
             
             await bot.AnswerInlineQueryAsync(update.InlineQuery.Id, array);
-            
-            Logger.Debug("Bot", "End ZoomCreateCommand");
         }
         else
         {
@@ -82,10 +80,12 @@ public class ZoomCreateCommand : TelegramCommand
                 });
         
             await bot.SendTextMessageAsync(update.Message.Chat.Id, "Конференция Zoom", replyMarkup: inline );
-            Logger.Debug("Bot", "End ZoomCreateCommand");
         }
+        
+        Logger.Debug("Bot", "End CreateZoomCommand");
+        return Name;
     }
-    public override bool Contains(Update update)
+    public override bool Contains(Update update, string lastmessage)
     {
         if (update.Type == UpdateType.InlineQuery)
             return true;

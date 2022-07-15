@@ -18,31 +18,30 @@ public class ShowArchiveCommand : TelegramCommand
      }
     public override string Name => Config.CommandNames["ShowArchiveCommand"];
 
-    public override async Task Execute(Update update, ITelegramBotClient bot)
+    public override async Task<string> Execute(Update update, ITelegramBotClient bot)
     {
-        Logger.Debug("Bot", "Handling ShowCommand");
+        Logger.Debug("Bot", "Handling ShowArchiveCommand");
 
         var _database = _services.GetRequiredService<GoalDataContext>();
-        var inDataBase = _database.Users
-            .Single(x => x.ChatId == update.Message.Chat.Id.ToString());
         
-        var list = _database.Goals.Where(x => x.UserId == inDataBase.Id);
+        var list = from user in _database.Users
+            join goal in _database.Goals on user.Id equals goal.UserId
+            select goal;
         
         foreach (var goal in list)
         {
-            if (goal.ArchiveDate == null && DateTime.Now > goal.DueDate)//if goal is not archived, but outdated
+            if (goal.ArchiveDate == null && DateTime.Now > goal.DueDate) //if goal is not archived, but outdated
                 goal.ArchiveDate = goal.DueDate;
-            
-            if(goal.ArchiveDate != null) //if goal is archive
+
+            if (goal.ArchiveDate != null) //if goal is archive
                 await bot.SendTextMessageAsync(update.Message.Chat.Id,
                     "Название занятия:\n" + goal.GoalName + "\nДата закрытия:\n" + goal.ArchiveDate);
         }
-
-        _database.SaveChanges();
-        Logger.Debug("Bot", "End ShowCommand");
+        Logger.Debug("Bot", "End ShowArchiveCommand");
+        return Name;
     }
 
-    public override bool Contains(Update update)
+    public override bool Contains(Update update, string lastmessage)
     {
         if (update.Type != UpdateType.Message)
             return false;

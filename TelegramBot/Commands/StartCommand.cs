@@ -9,16 +9,19 @@ public class StartCommand : TelegramCommand
 {
     public override string Name => Config.CommandNames["StartCommand"];
 
-    public override async Task Execute(Update update, ITelegramBotClient bot)
+    public override async Task<string> Execute(Update update, ITelegramBotClient bot)
     {
         Logger.Debug("Bot", "Handling StartCommand");
         
         await bot.SendTextMessageAsync(update.Message.Chat.Id, "🤖 Вас приветствует ToolsBot,\nЯ предназначен я работы с Zoom, а также для создания и отслеживания списка дел.");
 
         await new HelpCommand().Execute(update, bot);
+        
+        Logger.Debug("Bot", "End StartCommand");
+        return Name;
     }
 
-    public override bool Contains(Update update)
+    public override bool Contains(Update update, string lastmessage)
     {
         if (update.Type != UpdateType.Message)
             return false;

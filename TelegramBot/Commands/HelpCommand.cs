@@ -9,17 +9,21 @@ public class HelpCommand : TelegramCommand
 {
     public override string Name => Config.CommandNames["HelpCommand"];
 
-    public override async Task Execute(Update update, ITelegramBotClient bot)
+    public override async Task<string> Execute(Update update, ITelegramBotClient bot)
     {
         Logger.Debug("Bot", "Handling HelpCommand");
         
         await bot.SendTextMessageAsync(update.Message.Chat.Id, "\U0001F4D6 Список доступных команд:\n");
+        
         foreach (var x in Config.CommandNames)
         {
-            await bot.SendTextMessageAsync(update.Message.Chat.Id,$" {x}\n");
+            if(x.Value != "-")
+                await bot.SendTextMessageAsync(update.Message.Chat.Id,$" {x}\n");
         }
+        Logger.Debug("Bot", "End HelpCommand");
+        return Name;
     }
-    public override bool Contains(Update update)
+    public override bool Contains(Update update, string lastmessage)
     {
         if (update.Type != UpdateType.Message)
             return false;

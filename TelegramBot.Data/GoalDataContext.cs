@@ -59,7 +59,7 @@ public class GoalDataContext : DbContext
     public static readonly ILoggerFactory MyLoggerFactory = LoggerFactory.Create(builder =>
     {
         builder.AddFilter((category, level) => category == DbLoggerCategory.Database.Command.Name
-                    && level == LogLevel.Information)
+                    && level == LogLevel.Error)
                .AddConsole();
     });
     
