@@ -35,6 +35,6 @@ public class SheduleCommand : TelegramCommand
         if (update.Type != UpdateType.Message)
             return false;
         
-        return !update.Message.Text.StartsWith("/") && lastmessage == Name; 
+        return update.Message.Text.Contains(Name); 
     }
 }

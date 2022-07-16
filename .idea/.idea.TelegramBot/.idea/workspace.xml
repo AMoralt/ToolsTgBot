@@ -5,31 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e96c888-887f-48c4-8afa-5bacb6b8fa8e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/efCoreCommonOptions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/efCoreCommonOptions.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TelegramBot/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/Migrations/20220628195232_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/Migrations/20220628195232_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/Migrations/GoalDataContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/Migrations/GoalDataContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/bin/Debug/net6.0/TelegramBot.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/TelegramBot.Data.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/ref/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/ref/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/refint/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.Data/obj/Debug/net6.0/refint/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/AddGoalCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/AddGoalCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/SheduleZoomCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/SheduleZoomCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Abstractions/TelegramCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Abstractions/TelegramCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/AddCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/AddCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/AddGoalCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/AddGoalCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/CreateZoomCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/CreateZoomCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/HelpCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/SheduleCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/SheduleCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/SheduleZoomCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/SheduleZoomCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ShowArchiveCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/ShowArchiveCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/ShowCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/ShowCommand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/Commands/StartCommand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Commands/Implimentations/StartCommand.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Core/AppControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Core/AppControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/Core/EntryPoint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Core/EntryPoint.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/Services/HandlingService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/Services/HandlingService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/TelegramBot.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/TelegramBot.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/bin/Debug/net6.0/TelegramBot.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/TelegramBot.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/ref/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/ref/TelegramBot.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/refint/TelegramBot.dll" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot/obj/Debug/net6.0/refint/TelegramBot.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +40,9 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49d35132689941e097552abda2013e694898/26/e38d3377/IServiceProvider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/574cf8de59984b7891943ab2f605332a29800/09/8bcb25fd/RestRequest.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/574cf8de59984b7891943ab2f605332a29800/17/15fa23a2/RestClient.cs" root0="SKIP_HIGHLIGHTING" />
@@ -80,9 +79,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/e98616f62f792f6229144a9e7c8d66e3c4e9f57c036e23ddcd02e3d4becd/InputTextMessageContent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f25059ac3eeb39927bfe8744985fc3617f1239df4e11a74c5fee2c7df42a/UpdateType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/f4708639776589f5ac2739f6fcbfc67343b1f9dac51cc1dbfdb003eef77cc1c/Monitor.CoreCLR.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TelegramBot/Commands/CreateZoomCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TelegramBot/Commands/HelpCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/TelegramBot/Commands/SheduleZoomCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TelegramBot/Commands/Implimentations/CreateZoomCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TelegramBot/Commands/Implimentations/HelpCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/TelegramBot/Commands/Implimentations/SheduleZoomCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TelegramBot/Core/Config.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TelegramBot/Core/EntryPoint.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/TelegramBot/Core/Logger.cs" root0="FORCE_HIGHLIGHTING" />
@@ -167,7 +166,9 @@
       <workItem from="1657127638281" duration="331000" />
       <workItem from="1657870690151" duration="7237000" />
       <workItem from="1657880360238" duration="3672000" />
-      <workItem from="1657888465983" duration="2778000" />
+      <workItem from="1657888465983" duration="8530000" />
+      <workItem from="1657969899897" duration="143000" />
+      <workItem from="1657992532081" duration="4560000" />
     </task>
     <servers />
   </component>
@@ -198,5 +199,11 @@
         <PinnedItemInfo parentTag="Type#RestSharp.RestRequest" memberName="RequestFormat" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="DotNetProject">
+        <watch expression="_database.Goals" language="C#" />
+        <watch expression="_database.Users" language="C#" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

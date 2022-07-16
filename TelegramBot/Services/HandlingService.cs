@@ -1,10 +1,7 @@
-﻿using System.Data;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineQueryResults;
 using TelegramBot.Data;
 
 namespace TelegramBot;
@@ -34,8 +31,7 @@ public class HandlingService
         if (update.Type == UpdateType.Message)
             if (update.Message.Type == MessageType.Text)
             {
-                var user = GetUserFromDB(update);
-
+                var user = GetUserFromDB(update);//TODO checking user in DB without a handle command is not good
                 foreach (var command in _commands)
                 {
                     if (command.Contains(update, user.LastCommand))

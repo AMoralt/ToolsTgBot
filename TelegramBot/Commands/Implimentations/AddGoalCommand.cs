@@ -53,12 +53,13 @@ public class AddGoalCommand : TelegramCommand
     }
     private Goal CreateGoal(Update update, User user)
     {
+        var text = update.Message.Text.Split("-");
         return new Goal()
         {
             User = user,
             UserId = user.Id,
-            GoalName = update.Message.Text.Split("-")[0],
-            DueDate = Convert.ToDateTime(update.Message.Text.Split("-")[1]).ToUniversalTime().AddHours(5),
+            GoalName = text[0].Length > 60 ? text[0].Remove(60) : text[0],
+            DueDate = Convert.ToDateTime(text[1]).ToUniversalTime().AddHours(5),
             ArchiveDate = null
         };
     }
