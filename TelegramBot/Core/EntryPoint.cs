@@ -1,26 +1,23 @@
-﻿using System.Text.Json;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Telegram.Bot;
 using Telegram.Bot.Polling;
-using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineQueryResults;
+using TelegramBot;
 using TelegramBot.Data;
 using Task = System.Threading.Tasks.Task;
 
-namespace TelegramBot.Core;
 
 public class EntryPoint
 {
     public async Task EntryAsync()
     {
-        Logger.Debug("Bot", "Initializing");
+        await Logger.LogAsync("Bot", "Initializing");
         using var services = ConfigureServices();
 
         var receiverOptions = new ReceiverOptions
         {
-            AllowedUpdates = new UpdateType[]
+            AllowedUpdates = new []
             {
                 UpdateType.Message,
                 UpdateType.InlineQuery
@@ -29,7 +26,7 @@ public class EntryPoint
         
         try
         {
-            Logger.Debug("Bot", "StartReceiving");
+            await Logger.LogAsync("Bot", "StartReceiving");
             var client = services.GetRequiredService<TelegramBotClient>();
             var handler = services.GetRequiredService<HandlingService>();
 
@@ -37,7 +34,7 @@ public class EntryPoint
         }
         catch (Exception ex)
         {
-            Logger.Debug("Exception", ex.Message);
+            await Logger.LogAsync("Exception", ex.Message);
             AppControl.Exit();
         }
         

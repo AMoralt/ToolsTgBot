@@ -1,9 +1,12 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace TelegramBot;
-
-public static class Logger
+﻿public static class Logger
 {
-    public static void Debug(string source, string message) => 
-        Console.WriteLine($"{DateTime.Now.ToString("T"),-10} {source,-10} {message}");
+    //task with async console output source and message
+    public static async Task LogAsync(string source, string message)
+    {
+        await Task.Run(() =>
+        {
+            Console.WriteLine($"{DateTime.Now.ToString("T"),-20} {source,-0} {message}");
+        });
+    }
+        
 }

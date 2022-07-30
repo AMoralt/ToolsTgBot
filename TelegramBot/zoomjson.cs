@@ -1,6 +1,6 @@
 ﻿namespace TelegramBot;
 
-public class zoomjson
+public class zoomjson // useless class
 {
     public string topic { get; set; }
     public int duration { get; set; }

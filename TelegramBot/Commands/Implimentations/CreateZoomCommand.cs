@@ -1,17 +1,12 @@
-﻿using System.Net;
-using System.Text;
-using System.Text.Json.Nodes;
-using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using System.Text.Json.Nodes;
 using RestSharp;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using Telegram.Bot.Types.InlineQueryResults;
 using Telegram.Bot.Types.ReplyMarkups;
+using TelegramBot;
 using JsonSerializer = System.Text.Json.JsonSerializer;
-namespace TelegramBot;
 
 public class CreateZoomCommand : TelegramCommand
 {
@@ -19,7 +14,6 @@ public class CreateZoomCommand : TelegramCommand
 
     public override async Task<string> Execute(Update update, ITelegramBotClient bot)
     {
-        Logger.Debug("Bot", "Handling CreateZoomCommand");
         var client = new RestClient("https://api.zoom.us/v2/users/dias_galym@bk.ru/meetings");
         
         var request = new RestRequest()
@@ -70,28 +64,28 @@ public class CreateZoomCommand : TelegramCommand
             
             await bot.AnswerInlineQueryAsync(update.InlineQuery.Id, array);
         }
-        else
+        
+        if (update.Type == UpdateType.Message)
         {
             InlineKeyboardMarkup inline = new InlineKeyboardMarkup(
-                new InlineKeyboardButton("") 
+                new InlineKeyboardButton("")
                 {
                     Text = "👤Ссылка для входа",
                     Url = jsonNode["join_url"].ToString()
                 });
-        
-            await bot.SendTextMessageAsync(update.Message.Chat.Id, "Конференция Zoom", replyMarkup: inline );
+
+            await bot.SendTextMessageAsync(update.Message.Chat.Id, "Конференция Zoom", replyMarkup: inline);
         }
-        
-        Logger.Debug("Bot", "End CreateZoomCommand");
+
         return Name;
     }
     public override bool Contains(Update update, string lastmessage)
     {
         if (update.Type == UpdateType.InlineQuery)
             return true;
-        if (update.Message.Type != MessageType.Text)
+        if (update.Type != UpdateType.Message)
             return false;
-
+        
         return update.Message.Text.Contains(Name);
     }
 }

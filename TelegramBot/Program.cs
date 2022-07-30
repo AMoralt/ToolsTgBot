@@ -1,3 +1,1 @@
-﻿using TelegramBot.Core;
-
-await new EntryPoint().EntryAsync();
+﻿await new EntryPoint().EntryAsync();

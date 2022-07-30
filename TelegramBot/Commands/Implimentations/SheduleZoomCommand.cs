@@ -1,21 +1,12 @@
-﻿using System.Globalization;
-using System.Net;
-using System.Text;
-using System.Text.Json.Nodes;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+﻿using System.Text.Json.Nodes;
 using RestSharp;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.InlineQueryResults;
 using Telegram.Bot.Types.ReplyMarkups;
-using TelegramBot.Data;
+using TelegramBot;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
-namespace TelegramBot;
 
 public class SheduleZoomCommand : TelegramCommand
 {
@@ -23,15 +14,13 @@ public class SheduleZoomCommand : TelegramCommand
 
     public override async Task<string> Execute(Update update, ITelegramBotClient bot)
     {
-        Logger.Debug("Bot", "Start SheduleZoomCommand");
-        
         if (!ValidateMessage(update.Message.Text)) // if got wrong format message
         {
             await bot.SendTextMessageAsync(update.Message.Chat.Id, "Некорректная дата. Формат создание запланированных конференций:\ndd.MM.yyyy hh:mm");
             return Name;
         }
         
-        var date = Convert.ToDateTime(update.Message.Text).ToUniversalTime();
+        var date = DateTime.Parse(update.Message.Text).ToUniversalTime();
         var client = new RestClient("https://api.zoom.us/v2/users/dias_galym@bk.ru/meetings");
         var request = new RestRequest()
         {
@@ -75,22 +64,18 @@ public class SheduleZoomCommand : TelegramCommand
                 Url = jsonNode["join_url"].ToString()
             });
         await bot.SendTextMessageAsync(update.Message.Chat.Id, "Конференция Zoom на " + date.AddHours(5), replyMarkup: inline );
-        await bot.SendTextMessageAsync(update.Message.Chat.Id, "Вход разрешен за 10 минут до начала конференции.");
         
-        Logger.Debug("Bot", "End SheduleZoomCommand");
         return string.Empty; //TODO Swap null and Name, It turns out unintuitive
     }
 
     private bool ValidateMessage(string messageText)
     {
-        try
-        {
-            return DateTime.TryParse(messageText, out var date);
-        }
-        catch
+        var messageTextSplit = messageText.Split('-');
+        if (messageTextSplit.Length != 2)
         {
             return false;
         }
+        return DateTime.TryParse(messageTextSplit[1], out _);
     }
     public override bool Contains(Update update, string lastmessage)
     {

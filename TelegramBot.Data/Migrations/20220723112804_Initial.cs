@@ -25,13 +25,13 @@ namespace TelegramBot.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "task",
+                name: "goal",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     UserId = table.Column<int>(type: "integer", nullable: false),
-                    GoalName = table.Column<string>(type: "character varying(60)", maxLength: 60, nullable: false),
+                    Name = table.Column<string>(type: "character varying(60)", maxLength: 60, nullable: false),
                     DueDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     ArchiveDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
@@ -39,7 +39,7 @@ namespace TelegramBot.Data.Migrations
                 {
                     table.PrimaryKey("TasksPrimaryKey", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_task_users_UserId",
+                        name: "FK_goal_users_UserId",
                         column: x => x.UserId,
                         principalTable: "users",
                         principalColumn: "Id",
@@ -47,8 +47,8 @@ namespace TelegramBot.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_task_UserId",
-                table: "task",
+                name: "IX_goal_UserId",
+                table: "goal",
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
@@ -61,7 +61,7 @@ namespace TelegramBot.Data.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "task");
+                name: "goal");
 
             migrationBuilder.DropTable(
                 name: "users");

@@ -25,6 +25,7 @@
       <PackageReference Include="Microsoft.Extensions.Logging" Version="7.0.0-preview.5.22301.12" />
       <PackageReference Include="RestSharpSigned" Version="105.2.3" />
       <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.20.0" />
+      <PackageReference Include="System.Text.Json" Version="7.0.0-preview.5.22301.12" />
       <PackageReference Include="Telegram.Bot" Version="18.0.0" />
     </ItemGroup>
 

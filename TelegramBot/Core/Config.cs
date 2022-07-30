@@ -1,14 +1,9 @@
-﻿using System.Text.Json;
-using Microsoft.Extensions.Configuration;
-using Telegram.Bot.Polling;
-
-namespace TelegramBot;
+﻿using Microsoft.Extensions.Configuration;
+using TelegramBot;
 
 public static class Config
 {
     public static string? TelegramToken { get; }
-    public static string? APIkey { get; }
-    public static string? APISecret { get; }
     public static string? JWTToken { get; }
     public static string? DbConnection { get; }
     
@@ -23,15 +18,13 @@ public static class Config
                 .AddJsonFile("config.json").Build();
             
             TelegramToken = config["TelegramToken"];
-            APIkey = config["APIkey"];
             JWTToken = config["JWTToken"];
-            APISecret = config["APISecret"];
             DbConnection = config["ToDoDB"];
             CommandNames = config.GetSection("CommandNames").Get<Dictionary<string, string>>();
         }
         catch (Exception ex)
         {
-            Logger.Debug("Exception", ex.Message);
+            Logger.LogAsync("Exception", ex.Message);
             AppControl.Exit();
         }
     }

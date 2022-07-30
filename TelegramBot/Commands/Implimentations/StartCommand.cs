@@ -1,9 +1,7 @@
 ﻿using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
-using Telegram.Bot.Types.ReplyMarkups;
-
-namespace TelegramBot;
+using TelegramBot;
 
 public class StartCommand : TelegramCommand
 {
@@ -11,13 +9,9 @@ public class StartCommand : TelegramCommand
 
     public override async Task<string> Execute(Update update, ITelegramBotClient bot)
     {
-        Logger.Debug("Bot", "Handling StartCommand");
-        
         await bot.SendTextMessageAsync(update.Message.Chat.Id, "🤖 Вас приветствует ToolsBot,\nЯ предназначен я работы с Zoom, а также для создания и отслеживания списка дел.");
-
         await new HelpCommand().Execute(update, bot);
         
-        Logger.Debug("Bot", "End StartCommand");
         return Name;
     }
 

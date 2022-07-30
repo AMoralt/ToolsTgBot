@@ -46,13 +46,13 @@ public class GoalDataContext : DbContext
     {
         public void Configure(EntityTypeBuilder<Goal> builder)
         {
-            builder.ToTable("task");
+            builder.ToTable("goal");
         
             builder.HasKey(g => g.Id).HasName("TasksPrimaryKey");;
         
             builder.Property(g => g.ArchiveDate).HasDefaultValue(null);
         
-            builder.Property(g => g.GoalName).HasMaxLength(60);
+            builder.Property(g => g.Name).HasMaxLength(60);
         }
     }
     

@@ -1,8 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System.Net.Mime;
+using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
 using Telegram.Bot;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using TelegramBot.Data;
+using File = System.IO.File;
 
 namespace TelegramBot;
 
@@ -31,13 +34,18 @@ public class HandlingService
         if (update.Type == UpdateType.Message)
             if (update.Message.Type == MessageType.Text)
             {
-                var user = GetUserFromDB(update);//TODO checking user in DB without a handle command is not good
+                var user = await GetUserFromDb(update);//TODO checking user in DB without a handle command is not good
                 foreach (var command in _commands)
                 {
                     if (command.Contains(update, user.LastCommand))
                     {
-                        user.LastCommand = await command.Execute(update, bot); //Execute returns string Name of command TODO change method's name 
-                        _database.SaveChanges();
+                        await Logger.LogAsync(command.GetType().Name ,"Start command");
+                        
+                        var executedCommand = command.Execute(update, bot);//Execute returns string Name of command 
+                        user.LastCommand = await executedCommand; 
+                        await _database.SaveChangesAsync();
+                        
+                        await Logger.LogAsync(command.GetType().Name ,"End command");
                         break;
                     }
                 }
@@ -45,15 +53,20 @@ public class HandlingService
     }
     public async Task ErrorHandler(ITelegramBotClient bot, Exception exception, CancellationToken arg3)
     {
-        Logger.Debug("HandlingService", exception.Message);
+        await Logger.LogAsync("Error", exception.Message);
+        var path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent + "\\errors.txt";
+        var text = "Location:\n" + JsonSerializer.Serialize(exception.StackTrace);
+        File.WriteAllText(path, text);
         AppControl.Exit();
     }
 
-    private User GetUserFromDB(Update update)
+    private async Task<User> GetUserFromDb(Update update)
     {
-        var user = (from u in _database.Users
-            where u.ChatId == update.Message.Chat.Id.ToString()
-            select u).SingleOrDefault();
+        var user = (from u in _database.Users 
+            where u.ChatId == update.Message.Chat.Id.ToString() 
+            select u)
+            .FirstOrDefault()
+        ;
         
         if (user == null) //if user is not register in our database
         {
@@ -62,8 +75,8 @@ public class HandlingService
                 ChatId = update.Message.Chat.Id.ToString(),
                 LastCommand = null
             };
-            _database.Users.Add(user);
-            _database.SaveChanges();
+            await _database.Users.AddAsync(user);
+            await _database.SaveChangesAsync();
         }
         return user;
     }

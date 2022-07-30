@@ -12,7 +12,7 @@ using TelegramBot.Data;
 namespace TelegramBot.Data.Migrations
 {
     [DbContext(typeof(GoalDataContext))]
-    [Migration("20220715123158_Initial")]
+    [Migration("20220723112804_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,7 @@ namespace TelegramBot.Data.Migrations
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("GoalName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("character varying(60)");
@@ -51,7 +51,7 @@ namespace TelegramBot.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("task", (string)null);
+                    b.ToTable("goal", (string)null);
                 });
 
             modelBuilder.Entity("TelegramBot.User", b =>

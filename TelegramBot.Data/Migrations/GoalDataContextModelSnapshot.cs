@@ -36,7 +36,7 @@ namespace TelegramBot.Data.Migrations
                     b.Property<DateTime>("DueDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("GoalName")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("character varying(60)");
@@ -49,7 +49,7 @@ namespace TelegramBot.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("task", (string)null);
+                    b.ToTable("goal", (string)null);
                 });
 
             modelBuilder.Entity("TelegramBot.User", b =>
